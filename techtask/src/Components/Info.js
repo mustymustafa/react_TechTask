@@ -93,7 +93,7 @@ const URL = 'https://myuom-server.herokuapp.com'
             <div style={{height: '100%'}}> 
              
                 
-                <Card style={{ maxWidth: '100%', alignSelf: "center", padding: 20, backgroundColor: "black", marginTop: 50}}>
+                <Card style={{ maxWidth: '100%', alignSelf: "center", padding: 20, backgroundColor: "black", marginTop: 0}}>
                     <CardActionArea>
                      
                         <img style={{width: 200, borderRadius: 100, height: 200}} src={this.state.place.pic} alt="i"/>

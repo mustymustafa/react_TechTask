@@ -1,6 +1,7 @@
 //PARENT COMPONENT
 
 import '../../src/App.css';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import React, { useState, useEffect } from 'react'
 
 import Places from './Places'
