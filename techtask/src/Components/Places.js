@@ -1,3 +1,9 @@
+//CHILD COMPONENT 1
+
+
+
+
+
 import * as React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
@@ -8,7 +14,8 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import { BrowserRouter as Router, Switch, Route, Link, Redirect, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, withRouter } from "react-router-dom";
+
 
 
 
@@ -95,14 +102,15 @@ class Places extends React.Component{
             
                             <ListItem alignItems="start">
                                 <ListItemAvatar>
-                                    <Avatar alt="Remy Sharp" src={i.pic} />
+                                <Avatar style={{ height: '100px', width: '100px' }} alt="Remy Sharp" src={i.pic} />
                                 </ListItemAvatar>
                                 <ListItemText
+                                    style={{padding:10, fontWeight:'bold', fontSize:40}}
                                     primary={i.name}
                                     secondary={
-                                        <React.Fragment>
+                                        <div style={{padding: 5}}>
                                             <Typography
-                                                style={{ display: 'inline', color: 'white' }}
+                                                style={{ display: 'block', color: 'white' }}
                                                 component="span"
                                                 variant="body2"
                                                 className={'classes.inline'}
@@ -113,7 +121,7 @@ class Places extends React.Component{
 
                                             
 
-                                        </React.Fragment>
+                                        </div>
                                         
                                     }
                                 />

@@ -1,3 +1,5 @@
+//CHILD COMPONENT 2
+
 import * as React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -33,6 +35,13 @@ const URL = 'https://myuom-server.herokuapp.com'
     };
 
     async componentDidMount() {
+        //REDIRECTS BACK TO HOMEPAGE IF YOU TRY TO ACCESS THE INFO PAGE THROUGH THE URL
+
+        if (!this.props.location.state){
+            return this.props.history.push({
+                pathname: '/'
+            })
+        }
         console.log(this.props.location.state.info)
         this.setState({place: this.props.location.state.info })
 
@@ -42,6 +51,9 @@ const URL = 'https://myuom-server.herokuapp.com'
         e.preventDefault();
         const {name} = this.state;
         const id = this.state.place.id
+        if(name.length < 1){
+            return window.alert('please enter a name')
+        }
         try {
             this.setState({ loading: true })
             const fetchData = await fetch(`${URL}/api/v1/location/update`, {
@@ -58,8 +70,11 @@ const URL = 'https://myuom-server.herokuapp.com'
                 this.setState({ loading: false })
                 this.props.history.push({
                     pathname: '/',
-                    state: 'refresh'
+                    state: 'ok'
                 })
+
+           
+
             } else {
                 console.log('something went wrong' + value.message)
                 this.setState({ loading: false })

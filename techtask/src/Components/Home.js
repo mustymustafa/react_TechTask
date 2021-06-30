@@ -1,17 +1,22 @@
-import logo from '../../src/logo.svg';
-import '../../src/App.css';
+//PARENT COMPONENT
 
+import '../../src/App.css';
 import React, { useState, useEffect } from 'react'
 
 import Places from './Places'
 
-function Home({props}) {
+function Home({location, history}) {
 
-    const [selected, setSelected] = useState('')
+    const [selected, setSelected] = useState('please select a location...')
 
     useEffect(() => {
-        setSelected('')
-    }, [])
+        if(location.state === 'ok'){
+            setSelected('')
+            history.replace('', null)
+            window.alert('Selection cleared and List Refreshed')
+        }
+
+    }, [location.state, history])
 
 
     const getSelected = (d) => {
