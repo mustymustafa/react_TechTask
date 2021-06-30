@@ -19,6 +19,8 @@ import { BrowserRouter as Router, withRouter } from "react-router-dom";
 
 
 
+//API I CREATED FOR TESTING
+
 const URL = 'https://myuom-server.herokuapp.com'
 
 class Places extends React.Component{
@@ -156,13 +158,3 @@ class Places extends React.Component{
 
 export default withRouter(Places)
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        width: '100%',
-        maxWidth: '36ch',
-        backgroundColor: theme.palette.background.paper,
-    },
-    inline: {
-        display: 'inline',
-    },
-}));

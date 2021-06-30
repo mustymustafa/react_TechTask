@@ -13,7 +13,7 @@ function Home({location, history}) {
         if(location.state === 'ok'){
             setSelected('')
             history.replace('', null)
-            window.alert('Selection cleared and List Refreshed')
+            window.alert('Selection will be cleared and List will be Refreshed')
         }
 
     }, [location.state, history])
